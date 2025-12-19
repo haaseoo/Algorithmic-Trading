@@ -1,0 +1,7 @@
+2_251219.ipynb
+3_251219.ipynb
+flist.txt
+sell_list.txt
+number.txt
+buy_list.txt
+1_251219.ipynb
