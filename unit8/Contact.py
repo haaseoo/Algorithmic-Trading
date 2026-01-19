@@ -36,8 +36,33 @@ def print_menu():
     menu = input("메뉴 선택: ")
     return int(menu)
 
+def store_contact(contact_list):
+    f = open("contact_db.txt", "wt")
+    for contact in contact_list:
+        f.write(contact.name + "\n")
+        f.write(contact.phone_number + "\n")
+        f.write(contact.email + "\n")
+        f.write(contact.addr + "\n")
+    f.close()
+
+def load_contact(contact_list):
+    f = open("contact_db.txt", "rt")
+    lines = f.readlines()
+    num = len(lines) / 4
+    num = int(num)
+
+    for i in range(num):
+        name = lines[i * 4].rstrip()
+        phone_number = lines[i * 4 + 1].rstrip()
+        email = lines[i * 4 + 2].rstrip()
+        addr = lines[i * 4 + 3].rstrip()
+        contact = Contact(name, phone_number, email, addr)
+        contact_list.append(contact)
+    f.close()
+
 def run():
     contact_list = []
+    load_contact(contact_list)
     while 1:
         menu = print_menu()
         if menu == 1:
@@ -49,6 +74,7 @@ def run():
             name = input("Name: ")
             delete_contact(contact_list, name)
         elif menu == 4:
+            store_contact(contact_list)
             break
 
 if __name__ == '__main__':

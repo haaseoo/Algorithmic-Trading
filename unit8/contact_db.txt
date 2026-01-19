@@ -1,0 +1,8 @@
+test1
+010-0000-0000
+test@mail.com
+seoul
+test2
+010-1111-1111
+test2@mail.com
+tokyo
