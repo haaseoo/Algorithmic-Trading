@@ -21,9 +21,9 @@ broker = mojito.KoreaInvestment(
 resp = broker.fetch_price("005930")
 # pprint.pprint(resp)
 
-print("Open:  ", resp['output']['stck_oprc'])   # 시가
-print("High : ", resp['output']['stck_hgpr'])    # 고가
-print("Low  : ", resp['output']['stck_lwpr'])     # 저가
+print("Open: ", resp['output']['stck_oprc'])   # 시가
+print("High: ", resp['output']['stck_hgpr'])    # 고가
+print("Low: ", resp['output']['stck_lwpr'])     # 저가
 print("Close: ", resp['output']['stck_prpr'])    # 종가
 
 
