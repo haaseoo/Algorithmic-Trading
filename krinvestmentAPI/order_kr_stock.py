@@ -1,6 +1,7 @@
 # 1. 잔고 조회
 import mojito
 import pprint
+import time
 
 with open("secrets/koreainvestment.key", "r", encoding="utf-8") as f:
     lines = f.readlines()
@@ -35,3 +36,22 @@ else:
         print(comp['pchs_amt'])
         print(comp['evlu_amt'])
         print("-" * 20)
+
+# 2. 매수 주문
+# broker = mojito.KoreaInvestment(api_key=key, api_secret=secret, acc_no=acc_no)
+time.sleep(0.5)
+
+# 지정가
+resp = broker.create_limit_buy_order(
+    symbol="005930",
+    price=100000,
+    quantity=1
+)
+pprint.pprint(resp)
+
+# 시장가
+resp = broker.create_market_buy_order(
+    symbol="005930",
+    quantity=10
+)
+pprint.pprint(resp)
