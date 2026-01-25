@@ -55,3 +55,52 @@ resp = broker.create_market_buy_order(
     quantity=10
 )
 pprint.pprint(resp)
+
+
+# 매도 주문
+# 지정가
+resp = broker.create_limit_sell_order(
+    symbol="005930",
+    price=100000,
+    quantity=1
+)
+pprint.pprint(resp)
+
+# 시장가
+resp = broker.create_market_sell_order(
+    symbol="005930",
+    quantity=10
+)
+pprint.pprint(resp)
+
+
+# 주문 취소
+# 전체 취소
+resp = broker.cancel_order(
+    org_no="91252",
+    order_no="0000119206",
+    quantity=4,  # 잔량전부 취소시 원주문 수량과 일치해야함
+    total=True   # 잔량 전부
+)
+pprint.pprint(resp)
+
+# 일부 취소
+resp = broker.cancel_order(
+    org_no="",
+    order_no="",
+    quantity=2,  # 취소하고자 하는 수량
+    total=False   # 잔량 일부
+)
+pprint.pprint(resp)
+
+
+# 주문 정정
+resp = broker.modify_order(
+    org_no="",
+    order_no="",
+    order_type="00",
+    price=60000,
+    quantity=4,
+    total=True
+)
+pprint.pprint(resp)
