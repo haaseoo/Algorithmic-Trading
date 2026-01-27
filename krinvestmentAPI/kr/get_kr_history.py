@@ -4,7 +4,7 @@ import mojito
 import pprint
 import pandas as pd
 
-with open("secrets/koreainvestment.key", "r", encoding="utf-8") as f:
+with open("../secrets/koreainvestment.key", "r", encoding="utf-8") as f:
     lines = f.readlines()
 
     key = lines[0].strip()
