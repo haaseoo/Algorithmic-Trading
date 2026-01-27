@@ -22,9 +22,9 @@ print(deposit)
 
 SYMBOL = '005930'
 price = broker.fetch_price(symbol=SYMBOL)
-curr_price = price['output']['stck_prpr']
-print(curr_price)
+cur_price = int(price['output']['stck_prpr'])
+print(cur_price)
 
 QUANTITY = 1
-if curr_price < deposit:
+if cur_price < deposit:
     broker.create_market_buy_order(symbol=SYMBOL, quantity=QUANTITY)
