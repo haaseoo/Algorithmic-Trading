@@ -1,0 +1,10 @@
+*.key
+.env
+venv/
+.venv/
+token.dat
+*.mst
+*.zip
+.DS_Store
+__pycache__/
+secrets/
